@@ -4,22 +4,22 @@ import { Text, TouchableOpacity, View } from "react-native";
 import styles from "./style";
 
 export default function App() {
-  const [currentValue, setCurrentValue] = useState("");
-  const [result, setResult] = useState("");
+  const currentValue = "";
+  const result = "";
 
   const handlePress = (value) => {
-    setCurrentValue((prev) => prev + value);
+    currentValue((prev) => prev + value);
   };
 
   const calculateResult = () => {
     const evalResult = eval(currentValue).toString();
-    setCurrentValue(evalResult);
-    setResult("");
+    currentValue = (evalResult);
+    result = "";
   };  
 
   const clearInput = () => {
-    setCurrentValue("");
-    setResult("");
+    currentValue = "";
+    result = "";
   };
 
   return (
