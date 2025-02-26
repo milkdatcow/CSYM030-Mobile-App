@@ -5,6 +5,7 @@ import { createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 //import screens from screens folder
 import Posts from './screens/Posts';
 import Welcome from './screens/Welcome';
+import Login from './screens/Login';
 
 //create stack object 
 //const Stack = createNativeStackNavigator();
@@ -15,6 +16,7 @@ export default function App() {
     //create navigation structure and assign a name to each screen
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name='Login' component={Login}/>
         <Stack.Screen name='WelcomeScreen' component={Welcome} options={{tabBarLabel:'Welcome'}}/>
         <Stack.Screen name='PostsScreen' component={Posts}/>
       </Stack.Navigator>
