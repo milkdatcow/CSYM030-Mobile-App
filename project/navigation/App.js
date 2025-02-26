@@ -10,6 +10,16 @@ import Login from './screens/Login';
 //create stack object 
 //const Stack = createNativeStackNavigator();
 const Stack = createBottomTabNavigator();
+const StackTwo = createNativeStackNavigator();
+
+/*const Login = ()=>{
+  return(
+  <StackTwo.Navigator>
+      <Stack.Screen name="Login Screen"/>
+  </StackTwo.Navigator>
+  )
+}
+  */
 
 export default function App() {
   return (
