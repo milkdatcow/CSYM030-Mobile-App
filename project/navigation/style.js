@@ -46,6 +46,40 @@ const styles = StyleSheet.create({
       alignItems:'center',
       justifyContent: 'center',
     },
+    cbutton:{
+      width:50,
+      height: 50,
+      justifyContent: 'center',
+      alignItems: 'center',
+      margin: 5,
+
+      backgroundColor: '#FFB703',
+      borderRadius: 30,
+    },
+    opbutton:{
+      width:50,
+      height: 50,
+      justifyContent: 'center',
+      alignItems: 'center',
+      margin: 5,
+
+      backgroundColor: '#FB8500',
+      borderRadius: 30,
+    },
+    output:{
+      borderWidth:1,
+      width:170,
+      textAlign:'center',
+      marginBottom:10,
+      borderRadius:10,
+    },
+    items:{
+      flexDirection: 'row',
+      borderWidth:1,
+      padding:20,
+      width:400,
+      height:200
+    }
   });
 
 export default styles;

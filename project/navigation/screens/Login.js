@@ -10,29 +10,22 @@ const Login = ({navigation}) => {
     const[userName,setUserName] = useState("");
     const[password,setPassword] = useState("");
     const users = [
-      ['John','password'],
-      ['Charlie','password1']
+      {user:'John',pass:'password'},
+      {user:'Charlie',pass:'password1'}
     ]
 
     function loginUser(pusername, ppassword){
       var success = false;
-      //THIS DOESNT WORK, NEEDS FIXING
       for(var i=0;i<users.length;i++){
-        var user = users[i];
-        for(var j=0; j<user.length;j++){
-          if(pusername==user[j] && ppassword==user[j+1]){
-            success = true;
-          }else{
-            success = false;
-          }
-          console.log("j "+j+" "+user[j]);
-        }
-        console.log("i "+i+" "+user[i]);
-      }
-      if(success){
-        Alert.alert("Login Successful!")
-      }else{
-        Alert.alert("Login Failed...")
+        console.log(i+ " "+users[i].user);
+        console.log(i+ " "+users[i].pass);
+       if(userName == users[i].user && password == users[i].pass){
+        Alert.alert("Login Successful!");
+        navigation.navigate("WelcomeScreen")
+        break;
+       }else{
+        Alert.alert("Login Failed...");
+       }
       }
       
     }

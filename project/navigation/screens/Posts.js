@@ -1,5 +1,6 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, TouchableOpacity, FlatList } from 'react-native'
+import React from 'react';
+import styles from "../style";
 
 const Posts = () => {
   /*  
@@ -13,20 +14,33 @@ const Posts = () => {
         const response = await fetch(`https://jsonplaceholder.typicode.com/users/${comment}`);
         const data = await response.json();
         console.log(data);
-      }catch{errror}
+      }catch{errror}{
+      }
     }
-      */
+  */
 
+  const data = [
+    {id:'1', name:'Emanuella', age:26},
+    {id:'2', name:'Kofi', age:27},
+    {id:'3', name:'Amy', age:28},
+  ];
  
-
-
   return (
-    <View>
-        <Text>Posts</Text>
+    <View style={styles.container}>
+        <Text>Welcome to Posts</Text>
+        <FlatList
+        showsVerticalScrollIndicator={false}
+        data={data}
+        renderItem={({item})=>(
+          <View style={styles.items}><Text>{item.name}</Text>
+          <Text>{item.age}</Text></View>
+        )}
+        initialNumToRender={10}
+        maxToRenderPerBatch={5}
+        
+        />
     </View>
   )
 }
 
 export default Posts
-
-const styles = StyleSheet.create({})
