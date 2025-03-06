@@ -7,6 +7,8 @@ import Posts from './screens/Posts';
 import Welcome from './screens/Welcome';
 import Login from './screens/Login';
 import Calculator from './screens/Calculator';
+import Games from './screens/Games';
+import Quiz from './screens/Quiz';
 
 //create stack object 
 //const Stack = createNativeStackNavigator();
@@ -16,7 +18,7 @@ const StackTwo = createNativeStackNavigator();
 export default function App(){
   return(
   <NavigationContainer>
-  <StackTwo.Navigator>
+  <StackTwo.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name='LoginScreen' component={Login}/>
       <Stack.Screen name='WelcomeScreen' component={HomeTabs}/>
   </StackTwo.Navigator>
@@ -27,10 +29,12 @@ export default function App(){
 function HomeTabs() {
   return (
     //create navigation structure and assign a name to each screen
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name='WelcomeScreen' component={Welcome} options={{tabBarLabel:'Welcome'}}/>
         <Stack.Screen name='PostsScreen' component={Posts} options={{tabBarLabel:'Posts'}}/>
         <Stack.Screen name='CalculatorScreen' component={Calculator} options={{tabBarLabel:'Calculator'}}/>
+        <Stack.Screen name='GamesScreen' component={Games} options={{tabBarLabel:'Games'}}/>
+        <Stack.Screen name='QuizScreen' component={Quiz} options={{tabBarLabel:'Quiz'}}/>
       </Stack.Navigator>
   );
 }
