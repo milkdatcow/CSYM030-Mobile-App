@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { Ionicons } from "@expo/vector-icons";
 //import screens from screens folder
 import Posts from './screens/Posts';
 import Welcome from './screens/Welcome';
@@ -31,7 +32,21 @@ function HomeTabs() {
   return (
     //create navigation structure and assign a name to each screen
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name='WelcomeScreen' component={Welcome} options={{tabBarLabel:'Welcome'}}/>
+        <Stack.Screen name='WelcomeScreen' component={Welcome} 
+        options={{
+          tabBarLabel:'Welcome',
+          tabBarIcon: (tabInfo) => {
+            return (
+              <Ionicons
+                name="home"
+                size={24}
+                color={tabInfo.focused ? "#006600" : "#8e8e93"}
+              />
+            );}
+          }}/>
+        
+        
+        
         <Stack.Screen name='PostsScreen' component={Posts} options={{tabBarLabel:'Posts'}}/>
         <Stack.Screen name='CalculatorScreen' component={Calculator} options={{tabBarLabel:'Calculator'}}/>
         <Stack.Screen name='GamesScreen' component={Games} options={{tabBarLabel:'Games'}}/>

@@ -55,7 +55,7 @@ const Quiz = ({navigation}) => {
                         setQuizCompleted(false);
                     }}
                 >
-                    <Text>Restart Quiz</Text>
+                    <Text style={styles.buttonText}>Restart Quiz</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("WelcomeScreen")}>
                     <Text style={styles.buttonText}>Homepage</Text>

@@ -10,7 +10,9 @@ Colours
 #FB8500
 
 */
-const color1 = '#FB8500';
+const colour1 = '#FB8500';
+const colour2 = '#FD9E02';
+const colour3 = '#FFB703';
 const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -43,7 +45,7 @@ const styles = StyleSheet.create({
       height: 40,
       width: 150,
       margin:10,
-      backgroundColor: '#FFB703', 
+      backgroundColor: colour3, 
       borderRadius: 10,
       elevation: 3,
       alignItems:'center',
@@ -55,7 +57,6 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
       margin: 5,
-
       backgroundColor: '#FFB703',
       borderRadius: 30,
     },
@@ -66,7 +67,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       margin: 5,
 
-      backgroundColor: color1,
+      backgroundColor: '#FB8500',
       borderRadius: 30,
     },
     output:{
@@ -90,6 +91,10 @@ const styles = StyleSheet.create({
       marginVertical: 5,
       borderRadius: 10,
       width: '80%',
+    },
+    image:{
+      width:250,
+      height:250,
     },
   });
 
