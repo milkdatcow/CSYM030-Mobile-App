@@ -11,6 +11,7 @@ import Login from './screens/Login';
 import Calculator from './screens/Calculator';
 import Games from './screens/Games';
 import Quiz from './screens/Quiz';
+import Dice from './screens/Dice';
 
 //create stack object 
 //const Stack = createNativeStackNavigator();
@@ -23,7 +24,8 @@ export default function App(){
   <StackTwo.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name='LoginScreen' component={Login}/>
       <Stack.Screen name='WelcomeScreen' component={HomeTabs}/>
-      <Stack.Screen name='QuizScreen' component={Quiz} options={{tabBarLabel:'Quiz'}}/>
+      <Stack.Screen name='QuizScreen' component={Quiz}/>
+      <Stack.Screen name='DiceScreen' component={Dice}/>
   </StackTwo.Navigator>
   </NavigationContainer>
   );

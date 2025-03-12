@@ -20,10 +20,10 @@ const Posts = () => {
   */
 
   const data = [
-    {id:'1', name:'Emanuella', age:26, img:'../assets/ActualBingus.webp'},
-    {id:'2', name:'Kofi', age:27, img:'../assets/ActualBingus.webp'},
-    {id:'3', name:'Amy', age:28, img:'../assets/ActualBingus.webp'},
-    {id:'4', name:'John', age:50, img:'../assets/ActualBingus.webp'},
+    {id:'1', name:'Emanuella', age:26, img:'../images/ActualBingus.webp'},
+    {id:'2', name:'Kofi', age:27, img:'../images/ActualBingus.webp'},
+    {id:'3', name:'Amy', age:28, img:'../images/ActualBingus.webp'},
+    {id:'4', name:'John', age:50, img:'../images/ActualBingus.webp'},
   ];
  
   return (
@@ -36,7 +36,7 @@ const Posts = () => {
           <View style={styles.items}>
             <Text>{item.name}</Text>
             <Text>{item.age}</Text>
-            <Image style={styles.image} source={item.img}/>
+            <Image style={styles.image} source={require('../images/ActualBingus.webp')} />
           </View>
         )}
         initialNumToRender={10}

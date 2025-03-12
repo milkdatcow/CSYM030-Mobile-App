@@ -83,7 +83,6 @@ const styles = StyleSheet.create({
       borderWidth:1,
       padding:20,
       width:400,
-      height:200
     },
     qbutton: {
       backgroundColor: '#f0f0f0',

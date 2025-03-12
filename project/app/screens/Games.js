@@ -10,6 +10,9 @@ const Games = ({navigation}) => {
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("QuizScreen")}>
             <Text>Quiz</Text>
         </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("DiceScreen")}>
+            <Text>Dice Roll</Text>
+        </TouchableOpacity>
     </View>
   )
 }

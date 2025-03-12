@@ -10,7 +10,7 @@ const Welcome = ({navigation}) => {
     <View style={styles.container}>
         <Text style={styles.h1}>Welcome</Text>
         <Home stroke="black" width={32} height={32}/>
-        <Image source={'../assets/ActualBingus.webp'} />
+        
     </View>
   )
 }
