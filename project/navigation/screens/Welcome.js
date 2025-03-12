@@ -6,7 +6,7 @@ const Welcome = ({navigation}) => {
   return (
     //create button to navigate to posts screen - navigation.navigate("screen")
     <View style={styles.container}>
-        <Text>Welsome</Text>
+        <Text style={styles.h1}>Welcome</Text>
     </View>
   )
 }

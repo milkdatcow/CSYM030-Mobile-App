@@ -23,11 +23,12 @@ const Posts = () => {
     {id:'1', name:'Emanuella', age:26},
     {id:'2', name:'Kofi', age:27},
     {id:'3', name:'Amy', age:28},
+    {id:'4', name:'John', age:50},
   ];
  
   return (
     <View style={styles.container}>
-        <Text>Welcome to Posts</Text>
+        <Text style={styles.h1}>Posts</Text>
         <FlatList
         showsVerticalScrollIndicator={false}
         data={data}

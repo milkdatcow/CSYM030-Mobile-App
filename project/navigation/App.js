@@ -21,6 +21,7 @@ export default function App(){
   <StackTwo.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name='LoginScreen' component={Login}/>
       <Stack.Screen name='WelcomeScreen' component={HomeTabs}/>
+      <Stack.Screen name='QuizScreen' component={Quiz} options={{tabBarLabel:'Quiz'}}/>
   </StackTwo.Navigator>
   </NavigationContainer>
   );
@@ -34,7 +35,6 @@ function HomeTabs() {
         <Stack.Screen name='PostsScreen' component={Posts} options={{tabBarLabel:'Posts'}}/>
         <Stack.Screen name='CalculatorScreen' component={Calculator} options={{tabBarLabel:'Calculator'}}/>
         <Stack.Screen name='GamesScreen' component={Games} options={{tabBarLabel:'Games'}}/>
-        <Stack.Screen name='QuizScreen' component={Quiz} options={{tabBarLabel:'Quiz'}}/>
       </Stack.Navigator>
   );
 }

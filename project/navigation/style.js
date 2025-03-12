@@ -25,8 +25,10 @@ const styles = StyleSheet.create({
       fontSize:26,    
     },
     h2:{
-      marginTop:10,
-      marginLeft:10,
+      fontSize:20,
+    },
+    h3:{
+      fontSize:16,
     },
     input: {
       height: 40,
@@ -67,8 +69,9 @@ const styles = StyleSheet.create({
       borderRadius: 30,
     },
     output:{
-      borderWidth:1,
+      borderWidth:0.5,
       width:170,
+      height:25,
       textAlign:'center',
       marginBottom:10,
       borderRadius:10,
@@ -79,7 +82,14 @@ const styles = StyleSheet.create({
       padding:20,
       width:400,
       height:200
-    }
+    },
+    qbutton: {
+      backgroundColor: '#f0f0f0',
+      padding: 15,
+      marginVertical: 5,
+      borderRadius: 10,
+      width: '80%',
+    },
   });
 
 export default styles;

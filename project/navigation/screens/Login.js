@@ -14,8 +14,7 @@ const Login = ({navigation}) => {
       {user:'Charlie',pass:'password1'}
     ]
 
-    function loginUser(pusername, ppassword){
-      var success = false;
+    function loginUser(){
       for(var i=0;i<users.length;i++){
         console.log(i+ " "+users[i].user);
         console.log(i+ " "+users[i].pass);
