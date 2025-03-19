@@ -3,47 +3,44 @@ import React, { useState } from 'react';
 import styles from "../style";
 
 const Quiz = ({navigation}) => {
-    const[currentDice, setCurrentDice] = useState(0);
-    const[playerDice, setPlayerDice] = useState(0);
-    const win = 0
+    const[enemyScore, setEnemyScore] = useState(0);
+    const[playerScore, setPlayerScore] = useState(0);
+    const[win,setWin] = useState("");
 
     const handleRoll = () => {
-        let enemyRoll = Math.floor(Math.random() * 7);
-        let playerRoll = Math.floor(Math.random() * 7);
+        setEnemyScore(Math.floor(Math.random() * 7));
+        setPlayerScore(Math.floor(Math.random() * 7)); 
+        
+        console.log("enemy "+enemyScore);
+        console.log("player "+playerScore);
 
-        if(playerRoll>enemyRoll){
-            win = 0; //win
-            gameCompleted(win);
-        }else if(enemyRoll>playerRoll){
-            win = 1; //loss
-            
+        if(playerScore>enemyScore){
+            setWin("win"); //win
+        }else if(enemyScore>playerScore){
+            setWin("lose"); //loss
         }else{
-            win = 2; //draw
+            setWin("draw"); //draw
         }
-    };
+       
+    }
 
-    if (gameCompleted) {
-        return (
+    if(win!=""){
+        return(
             <View style={styles.container}>
-                <Text style={styles.h2}>You Have Completed The Quiz!</Text>
-                <Text style={styles.h2}>
-                    You scored: {score} out of {questions.length}
-                </Text>
+                <Text style={styles.h2}>You {win}!</Text>
                 <TouchableOpacity 
                     style={styles.button}
                     onPress={() => {
-                        setCurrentQuestion(0);
-                        setScore(0);
-                        setQuizCompleted(false);
+                        setWin("");
                     }}
                 >
-                    <Text style={styles.buttonText}>Restart Quiz</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("WelcomeScreen")}>
-                    <Text style={styles.buttonText}>Homepage</Text>
-                </TouchableOpacity>
-            </View>
-        );
+                <Text style={styles.buttonText}>Restart Game</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("WelcomeScreen")}>
+                <Text style={styles.buttonText}>Homepage</Text>
+            </TouchableOpacity>
+        </View>
+    );
     }
 
     return (

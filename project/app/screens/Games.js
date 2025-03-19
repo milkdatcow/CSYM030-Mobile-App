@@ -1,19 +1,30 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, FlatList } from 'react-native'
 import React from 'react'
 import styles from "../style";
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Games = ({navigation}) => {
+  const data = [
+    {id:1,screen:"QuizScreen",name:"Quiz"},
+    {id:2,screen:"DiceScreen",name:"Dice Game"}
+  ];
+
   return (
     //create button to navigate to posts screen - navigation.navigate("screen")
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
         <Text style={styles.h1}>Games</Text>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("QuizScreen")}>
-            <Text>Quiz</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("DiceScreen")}>
-            <Text>Dice Roll</Text>
-        </TouchableOpacity>
-    </View>
+        <FlatList
+          showsVerticalScrollIndicator={false}
+          data={data}
+          renderItem={({item})=>(
+            <View style={styles.items}>
+              <TouchableOpacity style={styles.button} onPress={() => navigation.navigate(item.screen)}>
+              <Text>{item.name}</Text>
+              </TouchableOpacity>
+            </View>
+            )}
+            />
+    </SafeAreaView>
   )
 }
 

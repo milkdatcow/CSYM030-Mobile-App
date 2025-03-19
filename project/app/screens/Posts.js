@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity, FlatList, Image } from 'react-native'
 import React from 'react';
 import styles from "../style";
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Posts = () => {
   /*  
@@ -27,7 +28,7 @@ const Posts = () => {
   ];
  
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
         <Text style={styles.h1}>Posts</Text>
         <FlatList
         showsVerticalScrollIndicator={false}
@@ -43,7 +44,7 @@ const Posts = () => {
         maxToRenderPerBatch={5}
         
         />
-    </View>
+    </SafeAreaView>
   )
 }
 
