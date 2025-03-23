@@ -1,81 +1,83 @@
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, Alert } from 'react-native';
-import React from 'react'
-import styles from "../style"
-import Icon from 'react-native-vector-icons/Ionicons';
-import { useState, useEffect } from 'react';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import React, { useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Key } from 'react-native-feather';
+import styles from "../style";
 
+const Login = ({ navigation }) => {
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
 
-const Login = ({navigation}) => {
-    const[userName,setUserName] = useState("");
-    const[password,setPassword] = useState("");
-    const users = [
-      {user:'John',pass:'password'},
-      {user:'Charlie',pass:'password1'}
-    ]
-    const test = {user:'John',pass:'password'}
-  
-    useEffect(() => {
-      storeData(test);
-      testRetrieval();
-    }, []);
+  //Predefined users
+  const users = [
+    { user: 'John', pass: 'password' },
+    { user: 'Charlie', pass: 'password1' },
+  ];
 
-    function loginUser(){
-      for(var i=0;i<users.length;i++){
-        console.log(i+ " "+users[i].user);
-        console.log(i+ " "+users[i].pass);
-       if(userName == users[i].user && password == users[i].pass){
-        Alert.alert("Login Successful!");
-        navigation.navigate("WelcomeScreen")
-        break;
-       }else{
-        Alert.alert("Login Failed...");
-        break;
-       }
-      }
-      
-    }
-
-    const storeData = async (value) => {
+  //Check if user is already logged in when component mounts
+  useEffect(() => {
+    const checkLoginStatus = async () => {
       try {
-        const jsonValue = JSON.stringify(value);
-        await AsyncStorage.setItem('key', jsonValue);
-      } catch (e) {
-        alert("error saving data")
-      }
-    }
-
-    const readItems = async (key) => {
-      try {
-        const jsonValue = await AsyncStorage.getItem(key);
-        return jsonValue != null ? JSON.parse(jsonValue) : [];
-      } catch (error) {
-        console.log('Error reading data', error);
-      }
-      };
-
-      const clearStorage = async () => {
-        try {
-          await AsyncStorage.clear();
-        } catch (e) {
-          alert('Failed to clear the async storage.');
+        const storedUser = await AsyncStorage.getItem('loggedInUser');
+        if (storedUser) {
+          //If a user is found in AsyncStorage, skip to WelcomeScreen
+          navigation.replace("WelcomeScreen");
         }
-      };
+      } catch (error) {
+        console.log('Error checking login status', error);
+      }
+    };
+    checkLoginStatus();
+  }, [navigation]);
 
-    
+  //Function to handle login
+  const loginUser = async () => {
+    let isAuthenticated = false;
 
+    //Check credentials against predefined users
+    for (let i = 0; i < users.length; i++) {
+      if (userName === users[i].user && password === users[i].pass) {
+        isAuthenticated = true;
+        break;
+      }
+    }
+
+    if (isAuthenticated) {
+      try {
+        //Store the logged-in user in AsyncStorage
+        const userData = { user: userName, pass: password };
+        await AsyncStorage.setItem('loggedInUser', JSON.stringify(userData));
+        Alert.alert("Login Successful!");
+        console.log(userData);
+        navigation.replace("WelcomeScreen");
+      } catch (error) {
+        Alert.alert("Error saving login data");
+      }
+    } else {
+      Alert.alert("Login Failed", "Invalid username or password");
+    }
+  };
 
   return (
     <View style={styles.container}>
-    <View><Text style={styles.h1}>Login</Text></View>
-    <View><TextInput placeholder='Enter input' style={styles.input} value={userName} onChangeText={text=>setUserName(text)}></TextInput>
+      <Text style={styles.h1}>Login</Text>
+      <TextInput
+        placeholder="Enter username"
+        style={styles.input}
+        value={userName}
+        onChangeText={(text) => setUserName(text)}
+      />
+      <TextInput
+        placeholder="Enter password"
+        style={styles.input}
+        secureTextEntry={true}
+        value={password}
+        onChangeText={(text) => setPassword(text)}
+      />
+      <TouchableOpacity style={styles.button} onPress={loginUser}>
+        <Text>Sign In</Text>
+      </TouchableOpacity>
     </View>
-    
-    <View><TextInput placeholder='Enter password' style={styles.input} secureTextEntry={true} value={password} onChangeText={text=>setPassword(text)}></TextInput></View>
-    <TouchableOpacity style={styles.button} onPress={()=>loginUser(userName,password)}><Text>Sign In</Text></TouchableOpacity>
-    </View>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
