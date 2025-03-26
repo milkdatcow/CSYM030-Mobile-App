@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import { Home, Mail, DivideCircle, Box } from "react-native-feather";
+import { Home, Mail, DivideCircle, Box, Folder } from "react-native-feather";
 //icons: https://feathericons.com
 //import screens from screens folder
 import Posts from './screens/Posts';
@@ -12,6 +12,7 @@ import Calculator from './screens/Calculator';
 import Games from './screens/Games';
 import Quiz from './screens/Quiz';
 import Dice from './screens/Dice';
+import Notes from './screens/Notes';
 
 //create stack object 
 //const Stack = createNativeStackNavigator();
@@ -74,6 +75,15 @@ function HomeTabs() {
             const icon=focused?"bell":"home";
             return (
             <Box name={icon} color={color} size={size} />)}
+          }}/>
+
+        <Stack.Screen name='NotesScreen' component={Notes} 
+        options={{
+          tabBarLabel:'Notes',
+          tabBarIcon:({ focused,color, size }) => {
+            const icon=focused?"bell":"home";
+            return (
+            <Folder name={icon} color={color} size={size} />)}
           }}/>
 
       </Stack.Navigator>

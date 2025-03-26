@@ -17,7 +17,7 @@ const Games = ({navigation}) => {
           showsVerticalScrollIndicator={false}
           data={data}
           renderItem={({item})=>(
-            <View style={styles.items}>
+            <View style={styles.listContainer}>
               <TouchableOpacity style={styles.button} onPress={() => navigation.navigate(item.screen)}>
               <Text>{item.name}</Text>
               </TouchableOpacity>

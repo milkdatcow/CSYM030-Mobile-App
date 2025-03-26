@@ -34,14 +34,12 @@ const Posts = () => {
         showsVerticalScrollIndicator={false}
         data={data}
         renderItem={({item})=>(
-          <View style={styles.items}>
+          <View style={styles.listContainer}>
             <Text>{item.name}</Text>
             <Text>{item.age}</Text>
             <Image style={styles.image} source={require('../images/ActualBingus.webp')} />
           </View>
         )}
-        initialNumToRender={10}
-        maxToRenderPerBatch={5}
         
         />
     </SafeAreaView>

@@ -1,20 +1,20 @@
 import {StyleSheet} from 'react-native'
 /*
 Colours
-#8ECAE6
-#219EBC
-#126782
-#023047
-#FFB703
-#FD9E02
-#FB8500
+https://coolors.co/palette/f08080-f4978e-f8ad9d-fbc4ab-ffdab9
+
 
 */
-const colour1 = '#FB8500';
-const colour2 = '#FD9E02';
-const colour3 = '#FFB703';
+const colour1 = '#F08080';
+const colour2 = '#F4978E';
+const colour3 = '#F8AD9D';
 const styles = StyleSheet.create({
     container: {
+      flex: 1,
+      backgroundColor: '#fff',
+      justifyContent: 'center',
+    },
+    welcome: {
       flex: 1,
       backgroundColor: '#fff',
       alignItems: 'center',
@@ -32,6 +32,8 @@ const styles = StyleSheet.create({
     },
     h3:{
       fontSize:16,
+      fontWeight: 'bold',
+      marginBottom: 4,
     },
     input: {
       height: 40,
@@ -57,7 +59,7 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
       margin: 5,
-      backgroundColor: '#FFB703',
+      backgroundColor: colour3,
       borderRadius: 30,
     },
     opbutton:{
@@ -67,7 +69,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       margin: 5,
 
-      backgroundColor: '#FB8500',
+      backgroundColor: colour1,
       borderRadius: 30,
     },
     output:{
@@ -77,12 +79,6 @@ const styles = StyleSheet.create({
       textAlign:'center',
       marginBottom:10,
       borderRadius:10,
-    },
-    items:{
-      flexDirection: 'row',
-      borderWidth:1,
-      padding:20,
-      width:400,
     },
     qbutton: {
       backgroundColor: '#f0f0f0',
@@ -95,6 +91,23 @@ const styles = StyleSheet.create({
       width:250,
       height:250,
     },
+    listContainer: {
+      padding: 12,
+      borderBottomWidth: 1,
+      borderBottomColor: '#eee',
+      marginBottom: 8,
+    },
+    deleteButton:{
+      button: {
+        height: 40,
+        width: 150,
+        margin:10,
+        backgroundColor: colour1, 
+        borderRadius: 10,
+        alignItems:'center',
+        justifyContent: 'center',
+      },
+    }
   });
 
 export default styles;
