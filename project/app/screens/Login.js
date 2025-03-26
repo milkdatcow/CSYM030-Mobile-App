@@ -1,4 +1,4 @@
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
 import React, { useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from "../style";
@@ -19,7 +19,6 @@ const Login = ({ navigation }) => {
       try {
         const storedUser = await AsyncStorage.getItem('loggedInUser');
         if (storedUser) {
-          //If a user is found in AsyncStorage, skip to WelcomeScreen
           navigation.replace("WelcomeScreen");
         }
       } catch (error) {
@@ -58,7 +57,7 @@ const Login = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.welcome}>
+    <View style={styles.centreContainer}>
       <Text style={styles.h1}>Login</Text>
       <TextInput
         placeholder="Enter username"

@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
       justifyContent: 'center',
     },
-    welcome: {
+    centreContainer: {
       flex: 1,
       backgroundColor: '#fff',
       alignItems: 'center',
