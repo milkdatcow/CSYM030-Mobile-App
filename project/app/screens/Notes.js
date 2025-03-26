@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { SafeAreaView, StyleSheet, Text } from 'react-native';
 import AddNote from '../components/AddNote'; 
 import styles from "../style";
 

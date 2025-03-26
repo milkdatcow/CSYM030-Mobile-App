@@ -37,18 +37,18 @@ const styles = StyleSheet.create({
     },
     input: {
       height: 40,
-      width: 150,
+      width: 300,
       margin: 10,
       borderWidth: 1,
       padding: 10,
-      borderRadius: 10,
+      borderRadius: 5,
     },
     button: {
       height: 40,
       width: 150,
       margin:10,
       backgroundColor: colour3, 
-      borderRadius: 10,
+      borderRadius: 5,
       elevation: 3,
       alignItems:'center',
       justifyContent: 'center',
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       margin: 5,
       backgroundColor: colour3,
-      borderRadius: 30,
+      borderRadius: 5,
     },
     opbutton:{
       width:50,
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
       margin: 5,
 
       backgroundColor: colour1,
-      borderRadius: 30,
+      borderRadius: 5,
     },
     output:{
       borderWidth:0.5,
@@ -78,13 +78,13 @@ const styles = StyleSheet.create({
       height:25,
       textAlign:'center',
       marginBottom:10,
-      borderRadius:10,
+      borderRadius:5,
     },
     qbutton: {
       backgroundColor: '#f0f0f0',
       padding: 15,
       marginVertical: 5,
-      borderRadius: 10,
+      borderRadius: 5,
       width: '80%',
     },
     image:{
@@ -98,15 +98,13 @@ const styles = StyleSheet.create({
       marginBottom: 8,
     },
     deleteButton:{
-      button: {
-        height: 40,
-        width: 150,
-        margin:10,
+        height: 20,
+        width: 80,
+        marginTop:10,
         backgroundColor: colour1, 
-        borderRadius: 10,
+        borderRadius: 5,
         alignItems:'center',
         justifyContent: 'center',
-      },
     }
   });
 

@@ -58,7 +58,7 @@ const Login = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={styles.welcome}>
       <Text style={styles.h1}>Login</Text>
       <TextInput
         placeholder="Enter username"
