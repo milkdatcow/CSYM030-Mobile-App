@@ -8,6 +8,7 @@ export default function App() {
   const [result, setResult] = useState("");
 
   const handlePress = (value) => {
+    
     setCurrentValue((prev) => prev + value);
   };
 
